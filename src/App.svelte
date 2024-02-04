@@ -1,32 +1,15 @@
 <script lang="ts">
+  import Autocomplete from "./components/Autocomplete/index.svelte";
+  import type { GeoAutoCompleteItem } from "./components/Autocomplete/mapboxSource";
+  import LocationWeather from "./components/LocationWeather/index.svelte";
+
+  let location: GeoAutoCompleteItem | undefined = undefined;
 </script>
 
 <main class="container mx-auto px-4 py-8">
-  <input
-    type="text"
-    placeholder="Type your location here"
-    class="input input-lg input-bordered w-full"
-  />
+  <Autocomplete onSelected={(item) => (location = item)} />
 
-  <!-- 
-    Current location:
-      - description of weather
-      - current temp
-      - high temp
-      - low temp
-
-    Extra info (hidable)
-      - Wind speed
-      - humidity
-      - Pressure
-      - sunrise/sunset times
-  -->
-
-  <!--
-    Next 7 days basic info
-  -->
-
-  <!--
-    Last 5 days
-  -->
+  {#if location}
+    <LocationWeather {location} />
+  {/if}
 </main>
