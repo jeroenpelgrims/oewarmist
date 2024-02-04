@@ -5,6 +5,7 @@ const sourceId = "MAPBOX_AUTOCOMPLETE";
 
 export interface GeoAutoCompleteItem extends Record<string, unknown> {
   name: string;
+  full_name: string;
   lat: number;
   lng: number;
 }
@@ -20,7 +21,7 @@ export async function mapboxAutocompleteSource(
     getItemInputValue: ({ item }) => item.name,
     templates: {
       item({ item }) {
-        return item.name;
+        return item.full_name;
       },
     },
     onSelect({ item }) {

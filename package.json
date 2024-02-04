@@ -25,6 +25,7 @@
   "dependencies": {
     "@algolia/autocomplete-js": "^1.15.1",
     "@algolia/autocomplete-theme-classic": "^1.15.1",
-    "axios": "^1.6.7"
+    "axios": "^1.6.7",
+    "dayjs": "^1.11.10"
   }
 }

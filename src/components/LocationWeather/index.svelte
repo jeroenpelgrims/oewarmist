@@ -1,29 +1,11 @@
 <script lang="ts">
-  import type { GeoAutoCompleteItem } from "../Autocomplete/mapboxSource";
+  import * as openweather from "../../api/openweather";
+  import Current from "./Current.svelte";
 
-  export let location: GeoAutoCompleteItem;
+  export let weather: openweather.CurrentWeather;
 </script>
 
-{location.name}
+<Current {weather} />
 
-<!-- 
-  Current location:
-    - description of weather
-    - current temp
-    - high temp
-    - low temp
-
-  Extra info (hidable)
-    - Wind speed
-    - humidity
-    - Pressure
-    - sunrise/sunset times
--->
-
-<!--
-  Next 7 days basic info
--->
-
-<!--
-  Last 5 days
--->
+<!-- Next 7 days -->
+<!-- Past 5 days -->

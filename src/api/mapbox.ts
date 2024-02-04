@@ -1,7 +1,6 @@
 import axios from "axios";
 import type { GeoAutoCompleteItem } from "../components/Autocomplete/mapboxSource";
 
-// https://api.mapbox.com/geocoding/v5/mapbox.places/stava.json
 const client = axios.create({
   baseURL: "https://api.mapbox.com/geocoding/v5/mapbox.places",
   params: {
@@ -14,6 +13,7 @@ const client = axios.create({
 type MapboxAutocompleteResponse = {
   features: {
     place_name: string;
+    text: string;
     center: [number, number]; // lng, lat
   }[];
 };
@@ -24,7 +24,8 @@ export async function autoCompleteLocation(query: string) {
   );
   const results: GeoAutoCompleteItem[] = response.data.features.map(
     (result) => ({
-      name: result.place_name,
+      name: result.text,
+      full_name: result.place_name,
       lat: result.center[1],
       lng: result.center[0],
     })
