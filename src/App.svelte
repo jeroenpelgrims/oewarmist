@@ -1,51 +1,32 @@
 <script lang="ts">
-  import svelteLogo from "./assets/svelte.svg";
-  import Counter from "./lib/Counter.svelte";
-  import viteLogo from "/vite.svg";
 </script>
 
-<main>
-  <h1 class="text-3xl font-bold underline">Hello world!</h1>
+<main class="container mx-auto px-4 py-8">
+  <input
+    type="text"
+    placeholder="Type your location here"
+    class="input input-lg input-bordered w-full"
+  />
 
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+  <!-- 
+    Current location:
+      - description of weather
+      - current temp
+      - high temp
+      - low temp
 
-  <div class="card">
-    <Counter />
-  </div>
+    Extra info (hidable)
+      - Wind speed
+      - humidity
+      - Pressure
+      - sunrise/sunset times
+  -->
 
-  <p>
-    Check out <a
-      href="https://github.com/sveltejs/kit#readme"
-      target="_blank"
-      rel="noreferrer">SvelteKit</a
-    >, the official Svelte app framework powered by Vite!
-  </p>
+  <!--
+    Next 7 days basic info
+  -->
 
-  <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
+  <!--
+    Last 5 days
+  -->
 </main>
-
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
