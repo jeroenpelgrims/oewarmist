@@ -1,3 +1,11 @@
+## How to run this locally
+
+- Make a copy of `.env.sample` and rename it to `.env`
+- Fill in the values for the environment variables in that file. (OpenWeather API key and Mapbox API key)
+- Run `npm install`
+- Run `npm run dev`
+- Open the browser and go to `http://localhost:5173/`
+
 ## Choices made
 
 ### Why Algolia Autocomplete
