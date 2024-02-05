@@ -5,8 +5,6 @@
   import LocationWeather from "./components/LocationWeather/index.svelte";
 
   let location: GeoAutoCompleteItem | undefined = undefined;
-  // This can cause a race condition when the location is switched quickly
-  // Doing it this way for simplicity
   $: weather = getWeather(location);
 
   async function getWeather(location: GeoAutoCompleteItem | undefined) {
